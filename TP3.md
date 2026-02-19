@@ -23,7 +23,8 @@ Utiliser un outil qui compare le contenu octet par octet (ex: diff), ou comparer
 
 **Pourquoi les deux fichiers chiffrés sont-ils différents ?**
 
-À cause du sel aléatoire et éventuellement du vecteur d’initialisation, qui changent à chaque chiffrement : même message + même mot de passe → résultat chiffré différent, ce qui empêche de reconnaître des contenus identiques.
+À cause du sel aléatoire et éventuellement du vecteur d’initialisation, qui changent à chaque chiffrement :
+`même message + même mot de passe → résultat chiffré différent`, ce qui empêche de reconnaître des contenus identiques.
 ​
 
 **Quel est le rôle du sel ?**
@@ -33,7 +34,7 @@ Le sel rend l’attaque par tables pré-calculées (rainbow tables) inefficace, 
 
 **Que se passe-t-il si une option change lors du déchiffrement ?**
 
-Si l’algorithme, le sel, PBKDF2 ou la fonction de hash ne correspondent pas exactement à ceux utilisés au chiffrement, le déchiffrement échoue (erreur) ou produit des données illisibles/corrompues.
+Si l’algorithme, le sel, PBKDF2 ou la fonction de hash ne correspondent pas exactement à ceux utilisés au chiffrement, `le déchiffrement échoue (erreur)` ou produit des données illisibles/corrompues.
 
 **Pourquoi utilise-t-on PBKDF2 ?**
 
@@ -42,9 +43,9 @@ PBKDF2 dérive une clé forte à partir d’un mot de passe humain, en appliquan
 
 **Différence entre encodage et chiffrement ?**
 
-Encodage : transformation réversible sans secret (ex: Base64), le but est la compatibilité de format.
+`Encodage` : transformation réversible sans secret (ex: Base64), le but est la compatibilité de format.
 ​
-Chiffrement : transformation qui rend les données inintelligibles sans clé secrète, le but est la confidentialité.
+`Chiffrement` : transformation qui rend les données inintelligibles sans clé secrète, le but est la confidentialité.
 
 ## 3. Questions
 
@@ -54,14 +55,14 @@ Elle permet de déchiffrer tous les messages chiffrés avec la clé publique et 
 
 **Pourquoi RSA n’est-il pas adapté au chiffrement de gros fichiers ?**
 
-RSA est lent, consomme beaucoup de ressources et ne peut chiffrer que des blocs de taille limitée (liée à la taille de la clé). On l’utilise plutôt pour de petites données (clé de session).
+RSA est `lent`, consomme beaucoup de ressources et ne peut chiffrer que des blocs de taille limitée (liée à la taille de la clé). On l’utilise plutôt pour de petites données (clé de session).
 
 **Différences dans les paramètres clé publique / clé privée ?**
 
-La clé publique contient uniquement :
+La `clé publique` contient uniquement :
 n : le modulo et e : l'exposant public
 
-La clé privée contient :
+La `clé privée` contient :
 n, e, d : l'exposant privé, p et q : les deux nombres premiers utilisés pour calculer n, d1 et d2 : exposants optimisés, coefficient : utilisé pour l'optimisation CRT.
 
 **Rôle du modulo dans RSA ?**
