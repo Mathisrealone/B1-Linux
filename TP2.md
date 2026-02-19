@@ -91,6 +91,10 @@ Masque : `255.255.240.0`
 
 Routeur : `10.33.79.254`
 
+## TP À FAIRE EN DUO
+
+https://github.com/Mayel-0/linux-2-Cours/tree/main/TP-2
+
 ## III. Manipulations d'autres outils/protocoles côté client
 
 Cette partie se concentre sur l'analyse des protocoles qui permettent à ma machine de s'intégrer automatiquement au réseau (DHCP) et de naviguer sur le web (DNS).
